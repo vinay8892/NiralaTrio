@@ -1825,8 +1825,6 @@ function StartTimerToResendOtp() {
 				//sUrl='http://localhost:44382/api/NewLeads'
 			}
 			jQuery("#pageloader").fadeIn();
-			var d = new Date();
-			AddLeadsLog(sname,smobile,semail,'NiralaTrio',d.toLocaleString());
             jQuery.ajax({
                 url: sUrl,
                 method: 'POST',
@@ -1946,8 +1944,6 @@ function StartTimerToResendOtp() {
 			var smobile=jQuery('#PriceMobile').val()
 			var semail='No Email.'
 			jQuery("#pageloader").fadeIn();
-			var d = new Date();
-			AddLeadsLog(sname,smobile,semail,'NiralaTrio',d.toLocaleString());
             jQuery.ajax({
                 url: 'https://tgroz9ryhi.execute-api.ap-south-1.amazonaws.com/Prod/api/Leads',
                 method: 'POST',
@@ -1987,8 +1983,6 @@ function StartTimerToResendOtp() {
 			var smobile=jQuery('#interestedMobile').val()
 			var semail=jQuery('#interestedEmail').val()
 			jQuery("#pageloader").fadeIn();
-			var d = new Date();
-			AddLeadsLog(sname,smobile,semail,'NiralaTrio',d.toLocaleString());
             jQuery.ajax({
                 url: 'https://tgroz9ryhi.execute-api.ap-south-1.amazonaws.com/Prod/api/Leads',
                 method: 'POST',
