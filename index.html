@@ -9,14 +9,41 @@
 		let otpTxt="";
 		let otpRef="";
 	</script>
-	<!-- Google Tag Manager -->
+<!-- Google Tag Manager for Analytics-->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WX98TFLR');
-</script>
+})(window,document,'script','dataLayer','GTM-54VR33TM');</script>
 <!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) for adwords -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11134973561"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11134973561');
+</script>
+
+<!-- Event snippet for SubmitLeadForm_Trio conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-11134973561/oXubCMqRrIYZEPnsyL0p',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -390,29 +417,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta content="website" property="og:type"/>
     <meta content="https://" property="og:url"/>
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/627f6185b0d10b6f3e722a77/1g30p9t5h';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+
 
 </head>
 
 <body class="site com-sppagebuilder view-page no-layout no-task itemid-437 en-gb ltr  sticky-header layout-fluid">
-
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WX98TFLR"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54VR33TM"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
 <div class="body-innerwrapper">
     <section id="sp-top-bar">
         <div class="container">
@@ -1858,7 +1871,7 @@ function StartTimerToResendOtp() {
 					  else
 					  {
 					     jQuery('#main-pop').modal('hide');
-						 gtag('event', 'conversion', { 'send_to': 'AW-10799384961/HaAsCIr7oYADEIGTxp0o'});
+						 gtag_report_conversion('https://www.niralatrio.com');
 						 window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
 					  }
 					    
@@ -1874,7 +1887,7 @@ function StartTimerToResendOtp() {
 				  else
 				  {
 					 jQuery('#main-pop').modal('hide');
-					 gtag('event', 'conversion', { 'send_to': 'AW-10799384961/HaAsCIr7oYADEIGTxp0o'});
+					 gtag_report_conversion('https://www.niralatrio.com');
 					 window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
 				  }
                 }
@@ -1920,13 +1933,13 @@ function StartTimerToResendOtp() {
                 success: function () {
 				      jQuery("#pageloader").fadeOut();
                       jQuery('#main-pop').modal('hide');
-					  gtag('event', 'conversion', { 'send_to': 'AW-10799384961/HaAsCIr7oYADEIGTxp0o'});
+					  gtag_report_conversion('https://www.niralatrio.com');
                       window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
                 },
                 error: function () {
 				   jQuery("#pageloader").fadeOut();
                    jQuery('#main-pop').modal('hide');
-				   gtag('event', 'conversion', { 'send_to': 'AW-10799384961/HaAsCIr7oYADEIGTxp0o'});
+				   gtag_report_conversion('https://www.niralatrio.com');
                    window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
                 }
 
@@ -1959,13 +1972,13 @@ function StartTimerToResendOtp() {
                 success: function () {
 				      jQuery("#pageloader").fadeOut();
                       jQuery('#price-model').modal('hide');
-					  gtag('event', 'conversion', { 'send_to': 'AW-10799384961/HaAsCIr7oYADEIGTxp0o'});
+					  gtag_report_conversion('https://www.niralatrio.com');
                       window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
                 },
                 error: function () {
 				   jQuery("#pageloader").fadeOut();
                    jQuery('#price-model').modal('hide');
-				   gtag('event', 'conversion', { 'send_to': 'AW-10799384961/HaAsCIr7oYADEIGTxp0o'});
+				   gtag_report_conversion('https://www.niralatrio.com');
                    window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
                 }
 
@@ -1998,13 +2011,13 @@ function StartTimerToResendOtp() {
                 success: function () {
 				      jQuery("#pageloader").fadeOut();
                       jQuery('#interested-model').modal('hide');
-					  gtag('event', 'conversion', { 'send_to': 'AW-10799384961/HaAsCIr7oYADEIGTxp0o'});
+					  gtag_report_conversion('https://www.niralatrio.com');
                       window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
                 },
                 error: function () {
 				   jQuery("#pageloader").fadeOut();
                    jQuery('#interested-model').modal('hide');
-				   gtag('event', 'conversion', { 'send_to': 'AW-10799384961/HaAsCIr7oYADEIGTxp0o'});
+				   gtag_report_conversion('https://www.niralatrio.com');
                    window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
                 }
 
