@@ -406,6 +406,59 @@ function gtag_report_conversion(url) {
     <meta content="https://" property="og:url"/>
 
 
+<script type="text/javascript">
+	 
+  document.addEventListener("DOMContentLoaded", function() {
+  var lazyloadImages;    
+
+  if ("IntersectionObserver" in window) {
+    lazyloadImages = document.querySelectorAll(".lazy");
+    var imageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var image = entry.target;
+          image.src = image.dataset.src;
+          image.classList.remove("lazy");
+          imageObserver.unobserve(image);
+        }
+      });
+    });
+
+    lazyloadImages.forEach(function(image) {
+      imageObserver.observe(image);
+    });
+  } else {  
+    var lazyloadThrottleTimeout;
+    lazyloadImages = document.querySelectorAll(".lazy");
+    
+    function lazyload () {
+      if(lazyloadThrottleTimeout) {
+        clearTimeout(lazyloadThrottleTimeout);
+      }    
+
+      lazyloadThrottleTimeout = setTimeout(function() {
+        var scrollTop = window.pageYOffset;
+        lazyloadImages.forEach(function(img) {
+            if(img.offsetTop < (window.innerHeight + scrollTop)) {
+              img.src = img.dataset.src;
+              img.classList.remove('lazy');
+            }
+        });
+        if(lazyloadImages.length == 0) { 
+          document.removeEventListener("scroll", lazyload);
+          window.removeEventListener("resize", lazyload);
+          window.removeEventListener("orientationChange", lazyload);
+        }
+      }, 20);
+    }
+
+    document.addEventListener("scroll", lazyload);
+    window.addEventListener("resize", lazyload);
+    window.addEventListener("orientationChange", lazyload);
+  }
+});
+
+ </script>
 </head>
 
 <body class="site com-sppagebuilder view-page no-layout no-task itemid-437 en-gb ltr  sticky-header layout-fluid">
@@ -656,7 +709,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                                 </div>
 
-
+							    <div  style="text-align: center;margin-top:25px;margin-bottom:25px;">
+									<a href="images/NiralaTrioBrochure.pdf" class="btn btn-danger">Download Brochure</a>
+								</div>
+								
                             </section>
                             <section id="PriceList" class="sppb-section   resort-discount wow">
                                 <div class="overlay">
@@ -703,7 +759,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                             <td class="her1 cursor click_here">
                                                                 <a href="javascript:void(0)"
                                                                    class="price-click">
-                                                                    Click Here
+                                                                    View price breakup
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -715,7 +771,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                             <td class="her1 cursor click_here">
                                                                 <a href="javascript:void(0)"
                                                                    class="price-click">
-                                                                    Click Here
+                                                                    View price breakup
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -727,7 +783,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                             <td class="her1 cursor click_here">
                                                                 <a href="javascript:void(0)"
                                                                    class="price-click">
-                                                                    Click Here
+                                                                    View price breakup
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -745,7 +801,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </div>
                             </section>
 
+                            <section id="priceDetails"
+                                     class="sppb-section   rooms-suits resort-title-heading wow">
+                                <div class="sppb-row-container">
+                                    <div class="sppb-section-title sppb-text-center">
+                                        <h2 class="sppb-title-heading delay-10s animated wow fadeInDown animated"
+                                            style="visibility: visible; animation-name: fadeInDown;">Price Details
+                                            </h2>
+                                        <div class="underline">&nbsp;</div>
+                                    </div>
 
+									<img id="PriceLstNiralaTrio_1"  data-src="images/NiralaTrio_Price_1.jpg" alt="Nirala Trio" width="100%" class="lazy" ></img>	
+									<img id="PriceLstNiralaTrio_2" data-src="images/NiralaTrio_Price_2.jpg" alt="Nirala Trio" width="100%" class="lazy"></img>
+						
+                                </div>
+							    <div  style="text-align: center;margin-top:25px;margin-bottom:25px;">
+									<a href="images/Price List Nirala Trio 01.06.24.pdf" class="btn btn-danger" Style="margin-bottom:10px">Download Payment Plan</a>
+								</div>
+
+                            </section>
 
                             <section id="Connectivity" class="sppb-section   rooms-suits">
                                 <div class="sppb-row-container" style="">
