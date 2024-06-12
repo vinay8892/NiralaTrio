@@ -331,7 +331,7 @@ function gtag_report_conversion(url) {
 .main td{padding:0 8px;vertical-align:middle;border:0}
 .main input{width:100%;border:1px solid #ccc;margin:2px 0;padding:0 2%;height:22px;text-align:right}.ac{text-align:center}.b{font-weight:bold}
 .main select{width:100%;border:1px solid #ccc;margin:2px 0;background:#fff;height:22px}.w50{width:50%}.main button{width:100%;font-weight:bold;margin:3px 0}
-
+#more {display: none;}	
 /*** 
 
 ====================================================================
@@ -1391,6 +1391,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="sp-column footer-txt">
                         <span class="sp-copyright">Nirala Trio </span>
                         Sector Tech Zone IV, Greater Noida West,<br> (U.P.) – 201306
+						<p>+91 9717140707</P>
                     </div>
                 </div>
                 <div class="col-sm-4 col-md-4">
@@ -1444,6 +1445,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="sp-column footer-txt">
                         <span class="sp-copyright">Nirala Trio</span>
                         Sector Tech Zone IV, <br> Greater Noida West – 201306
+						<p>+91 9717140707</P>
                     </div>
                 </div>
             </div>
@@ -1461,7 +1463,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										<a href="privacy-policy/index.html" target="_blank" style="color: #0078bf;">
                             Privacy Policy.</a>
 					<p>
-					Disclaimer : The content provided on this website is for information purposes only and does not constitute an offer to avail any service. We do not claim to be owner of the real estate property/society. The prices mentioned are subject to change without prior notice, and the availability of properties mentioned is not guaranteed. The images displayed on the website are for representation purposes only and may not reflect the actual properties accurately.
+					 Disclaimer :This website belongs to the authorised marketing partner of the project. The company reserves the right to add, alter or delete material from the website at any time and may, at any time, revise these terms without prior notification, therefore advise that you periodically visit this page to review the current terms. This is not an offer, an invitation to offer and/or commitment of any nature. The images includes artistic impressions and stock images.<span id="dots">...</span><span id="more"> The Designs, dimensions, cost, facilities, plans, images, specifications, furniture, accessories, paintings, items, electronic goods, additional fittings/fixtures, decorative items, false ceiling including finishing materials, specifications, shades, sizes and colour of the tiles and other details shown in the images are only indicative in nature and are only for the purpose of illustrating/indicating a possible layout and do not form part of the standard specifications/amenities/services to be provided in the flat. Recipients are advised to use their discretion in relying on the information/amenities described/shown therein. All specifications of the property shall be as per the final agreement between the Parties.</span>					
+                    <button role="link" onclick="ReadMoreLess()" id="myBtn" style="background: none!important;border: none;color: #0078bf;">Read more</button>
+					
 					</p>
 					<p>
 					-
@@ -1610,7 +1614,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ================ I'm interested ==================== -->
 
-<button class="btn btn-danger interested i-am hidden-xs">Get Call Back</button>
+<button class="btn btn-danger interested i-am hidden-xs">Book Site Visit</button>
 
 <!--<button id="mobile1" type="submit" class="btn interested-mobile hidden-lg hidden-md mobile-btn i-am" data-toggle="modal" data-target="#brochure" style="display: block;"><i class="fa fa-phone"></i>-->
 <!--</button>-->
@@ -1624,7 +1628,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">×</span></button>
 
-                <h4 class="modal-title">Get Call Back</h4>
+                <h4 class="modal-title">Book Free Site Visit</h4>
             </div>
             <div class="modal-body">
                 <p>Please enter the details below to get the detailed pricing information.</p>
@@ -1763,6 +1767,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="js/cookie.js"></script>
 <script src="js/popout.js"></script>
 <script type="text/javascript" src="js/wow.min.js"></script>
+<script src="js/indexJs.js"></script>
 
 <script type="text/javascript">
     jQuery(document).ready(function () {
@@ -1802,168 +1807,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			}
 </script>
 
-<script type="text/javascript">
-	 jQuery(document).ready(function(){
-	      
-	 	   jQuery("#AvailtheoffersNow").click(function(){
-		    if (!jQuery("#main-popup").valid())
-			{
-			   return false;
-			}
-            var sname=jQuery('#POPUPName').val()
-			var smobile=jQuery('#POPUPMobile').val()
-			var semail='No Email.'
-			var sUrl=''
-			sUrl='https://tgroz9ryhi.execute-api.ap-south-1.amazonaws.com/Prod/api/Leads'
-			jQuery("#pageloader").fadeIn();
-            jQuery.ajax({
-                url: sUrl,
-                method: 'POST',
-                data: {
-
-                    name: sname ,
-                    mobile: smobile,
-                    email: semail,
-					date:'',
-					projectName:'NiralaTrio'
-
-                },
-                success: function (data) {
-				      jQuery("#pageloader").fadeOut();
-					 jQuery('#main-pop').modal('hide');
-					 gtag_report_conversion('https://www.niralatrio.com');
-					 window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');					    
-                },
-                error: function () {
-				   jQuery("#pageloader").fadeOut();				   
-				 jQuery('#main-pop').modal('hide');
-				 gtag_report_conversion('https://www.niralatrio.com');
-				 window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
-                }
-
-            });
-			return false;
-	      });
-		  
-		  
-		  jQuery("#PricingQuerySubmit").click(function(){
-			if (!jQuery("#price-popup").valid())
-			{
-			   return false;
-			}
-            var sname=jQuery('#PriceName').val()
-			var smobile=jQuery('#PriceMobile').val()
-			var semail='No Email.'
-			jQuery("#pageloader").fadeIn();
-            jQuery.ajax({
-                url: 'https://tgroz9ryhi.execute-api.ap-south-1.amazonaws.com/Prod/api/Leads',
-                method: 'POST',
-                data: {
-
-                    name: sname ,
-                    mobile: smobile,
-                    email: semail,
-					date:'',
-					projectName:'NiralaTrio'
-
-                },
-                success: function () {
-				      jQuery("#pageloader").fadeOut();
-                      jQuery('#price-model').modal('hide');
-					  gtag_report_conversion('https://www.niralatrio.com');
-                      window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
-                },
-                error: function () {
-				   jQuery("#pageloader").fadeOut();
-                   jQuery('#price-model').modal('hide');
-				   gtag_report_conversion('https://www.niralatrio.com');
-                   window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
-                }
-
-            });
-			return false;
-	      });
-		  
-		  
-		  jQuery("#interestedCustomer").click(function(){
-		    if (!jQuery("#float-form").valid())
-			{
-			   return false;
-			}
-            var sname=jQuery('#interestedName').val()
-			var smobile=jQuery('#interestedMobile').val()
-			var semail=jQuery('#interestedEmail').val()
-			jQuery("#pageloader").fadeIn();
-            jQuery.ajax({
-                url: 'https://tgroz9ryhi.execute-api.ap-south-1.amazonaws.com/Prod/api/Leads',
-                method: 'POST',
-                data: {
-
-                    name: sname ,
-                    mobile: smobile,
-                    email: semail,
-					date:'',
-					projectName:'NiralaTrio'
-
-                },
-                success: function () {
-				      jQuery("#pageloader").fadeOut();
-                      jQuery('#interested-model').modal('hide');
-					  gtag_report_conversion('https://www.niralatrio.com');
-                      window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
-                },
-                error: function () {
-				   jQuery("#pageloader").fadeOut();
-                   jQuery('#interested-model').modal('hide');
-				   gtag_report_conversion('https://www.niralatrio.com');
-                   window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
-                }
-
-            });
-			return false;
-	      });
-		  
-		  
-		 jQuery('#sendMessage').click(function(){
-		    if (!jQuery("#contact-form").valid())
-			{
-			   return false;
-			}
-            var scontactName=jQuery('#fnameContactUs').val() + ' ' + jQuery('#lnameContactUs').val()
-			var scontactPhone=jQuery('#mobileContactUs').val()
-			var scontactEmail=jQuery('#emailContactUs').val()
-			var scontactMessage=jQuery('#messageContactUs').val()
-			jQuery("#pageloader").fadeIn();
-            jQuery.ajax({
-                url: 'https://tgroz9ryhi.execute-api.ap-south-1.amazonaws.com/Prod/api/ContactData',
-                method: 'POST',
-                data: {
-					name: scontactName,
-                    mobile: scontactPhone,
-                    email: scontactEmail,
-                    message: scontactMessage,
-                    projectName:'NiralaTrio'
-                },
-                success: function () {
-                      jQuery("#pageloader").fadeOut();
-                      window.alert('Thank you for contacting us. Soon we will reply to your query');
-					  jQuery('#fnameContactUs').val('');
-					  jQuery('#lnameContactUs').val('');
-					  jQuery('#mobileContactUs').val('');
-					  jQuery('#emailContactUs').val('');
-					  jQuery('#messageContactUs').val('');
-                },
-                error: function () {
-                   jQuery("#pageloader").fadeOut();
-                   window.alert('Thank you for contacting us. Soon we will reply to your query');
-                }
-
-            });
-	      });
-	 
-	 
-	 });
-</script>
 	 
 <script type="text/javascript">
     jQuery(document).ready(function ($) {
